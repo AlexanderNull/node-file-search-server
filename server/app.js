@@ -8,7 +8,11 @@ const karaokeServer = (serverSettings) => {
     const app = express();
     app.use(express.static(path.resolve('public')));
 
-    const files = require('./getFiles')(['.']);
+    const files = require('./getFiles')(serverSettings.scanDirectories);
+
+    app.get('/files', (req, res) => {
+        res.json(files);
+    });
 
     require('babel-register')({
         ignore: false,

@@ -1,6 +1,7 @@
 module.exports = {
     scanDirectories: [
         // put directories here
+        '.',
     ],
-    serverPort: 3000,
+    serverPort: 8080,
 };

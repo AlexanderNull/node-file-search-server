@@ -3,7 +3,7 @@ module.exports = {
   entry: './client/main.js',
   output: { path: path.join(__dirname, 'public', 'scripts'), filename: 'app.js' },
   module: {
-    loaders: [
+    rules: [
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
@@ -14,4 +14,8 @@ module.exports = {
       }
     ]
   },
+    devtool: 'source-map',
+    resolve: {
+        extensions: ['.jsx', '.js', '.ts', '.tsx', '.json'],
+    },
 };
